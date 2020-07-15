@@ -18,7 +18,6 @@ function palindrome(str) {
   palindrome("_eye");
 
 
-
 app.listen(2020, () => {
     console.log('Listening to everything!')
 })
