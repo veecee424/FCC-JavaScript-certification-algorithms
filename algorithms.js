@@ -49,6 +49,24 @@ var convertToRoman = function(num) {
 
  convertToRoman(48);
 
+ //CAESAR CIPHER
+ function rot13(str) {
+    let alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+    let match = str.toUpperCase().match(/./sg)
+    const cipher = []
+    match.forEach((alphabet) => {
+        let thirteenth;
+        if (!(/\w/gi).test(alphabet)) {
+            thirteenth = alphabet
+        } else {
+            thirteenth = alphabets[alphabets.indexOf(alphabet) + 13]
+        }
+        cipher.push(thirteenth)
+    });
+    return cipher.join("")
+  }
+  console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));
+
 
 app.listen(2020, () => {
     console.log('Listening to everything!')
